@@ -1,6 +1,9 @@
 import express from 'express';
 import { Configuration, OpenAIApi } from "openai";
 import dotenv from "dotenv";
+//docker run -p 3000:3000 terminal << THIS IS THE COMMAND IN CLI
+//docker compose up
+//TODO: create app.get(/) for index.html, and all other static sites. might take forever but whatever
 
 const app = express();
 const env = dotenv.config({path: './process.env'});
@@ -10,6 +13,7 @@ app.use(express.static('./'));
 
 const portPath = process.env.PORT;
 const openApiKey = process.env.OPENAI_API_KEY;
+const hostname = process.env.HOSTNAME;
 const configuration = new Configuration({
   apiKey: openApiKey,
 });
@@ -58,6 +62,24 @@ const openai = new OpenAIApi(configuration);
         console.log(error.message);
       }
     });
+
+
+
+  // app.get('/', function(req,res){
+  //     res.sendFile('public/index.html');
+  //   });
+
+  // app.get('/execute', function(req,res){
+  //     res.sendFile(path + 'iris.html');
+  //   }); 
+
+  // app.get('/home', function(req,res){
+  //     res.sendFile(path + 'home.html');
+  //   }); 
+
+  // app.get('/', function(req,res){
+  //     res.sendFile(path + 'iris.html');
+  //   }); 
 
 // app.use(response, () => {
 //   console.log(response);
