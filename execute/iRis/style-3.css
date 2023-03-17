@@ -1,0 +1,290 @@
+@font-face {
+  font-family: "iris";
+  src: url(".../XanhMono-Regular.ttf");      
+}
+
+body {
+  background-color: #0f0f0f;
+  margin: 0;
+}
+
+.terminal{
+padding-left: 1%;
+padding-top: 1%;
+  width: 100%;
+}
+#blur {
+  font-family: "iris";
+
+  color:rgba(239, 239, 239, 0.811);
+}
+
+p {
+  display: block;
+  width: 0px;
+  margin: 0;
+  font-size: 12px;
+  color:rgba(239, 239, 239, 0.811);
+  overflow: hidden;
+  font-family: "iris";
+  white-space: nowrap;
+  animation-name: writeText;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  text-shadow: 0 -2px black;
+}
+a {
+  font-family: "iris";
+  color:rgba(239, 239, 239, 0.811);
+  text-shadow: 0 -2px black;
+  text-decoration: none;
+}
+a.head-text {
+  font-family: "iris";
+  color:rgba(239, 239, 239, 0.811);
+  text-shadow: 0 -2px black;
+  text-decoration: none;
+}
+a.head-text:hover {
+  font-family: "iris";
+  color:rgb(255, 255, 255);
+  text-shadow: 0 -2px black;
+  text-decoration: none;
+}
+a:hover{
+  font-family: "iris";
+  text-shadow: 0 -2px black;
+  color: rgb(255, 255, 255);
+  text-decoration:none;
+}
+
+h1{
+  text-align: center;
+  opacity: 0;
+  color: rgb(133, 133, 133);
+  font-family:"iris";
+  animation-name: fadeIn;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-delay: 10500ms;
+  text-shadow: 0 -2px black;
+}
+
+p.delay1 {
+  animation-delay: 2000ms;
+  font-family: "iris";
+  font-size: 12px;
+
+  color:rgba(239, 239, 239, 0.811);
+}
+p.delay2 {
+  animation-delay: 3000ms;
+  font-family: "iris";
+  font-size: 12px;
+
+  color:rgba(239, 239, 239, 0.811);
+}
+p.delay3 {
+  animation-delay: 4000ms;
+  font-family: "iris";
+  font-size: 12px;
+
+  color:rgba(239, 239, 239, 0.811);
+}
+p.delay4 {
+  animation-delay: 5000ms;
+  font-family: "iris";
+  font-size: 12px;
+
+  color:rgba(239, 239, 239, 0.811);
+}
+p.delay5 {
+  animation-delay: 6000ms;
+  font-family: "iris";
+  font-size: 12px;
+
+  color:rgba(239, 239, 239, 0.811);
+}
+
+.delay6 {
+  animation-delay: 7000ms;
+  font-family: "iris";
+  font-size: 12px;
+
+  color:rgba(239, 239, 239, 0.811);
+}
+.delay7 {
+  animation-delay: 8000ms;
+  font-family: "iris";
+  font-size: 12px;
+
+  color:rgba(239, 239, 239, 0.811);
+}
+.delay8 {
+  animation-delay: 9000ms;
+  font-family: "iris";
+  font-size: 12px;
+
+  color:rgba(239, 239, 239, 0.811);
+}
+
+
+/* Standard syntax */
+@keyframes writeText {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#loader {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+#loaded {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(195, 179, 215, 0.811);
+  animation-name: load;
+  animation-duration: 3000ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes load {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 70%;
+  }
+  70% {
+    width: 100%;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+form{
+  position: relative;
+  color: transparent;
+  text-shadow: 0 0 1px rgb(0, 0, 0);
+  background-color:rgb(23, 23, 23);
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: middle;
+
+
+}
+
+input, button, textarea {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-image: none;
+  background-color: #5b585c;
+  box-shadow: none;
+  padding: 5px;
+  line-height:2vh;
+}
+input:focus, button:focus, textarea:focus {
+  outline: none;
+}
+
+
+textarea {
+  min-height: 50px;
+  resize: vertical;
+  line-height:2vh;
+}
+.homeButton{
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-image: none;
+  background-color: #5b585c;
+  box-shadow: none;
+  padding: 5px;
+  line-height:2vh;
+  font-family: "iris";
+}
+
+button {
+  cursor: pointer;
+  font-weight: 500;
+  font-family: "iris";
+}
+
+.feedback-card {
+  border: 1px solid black;
+  max-width: 980px;
+  background-color: rgb(132, 123, 136);
+  margin: 0 auto;
+  box-shadow: -1rem 1rem 0 rgba(29, 30, 28, 0.26);
+  font-family: "iris";
+}
+.feedback-header {
+  text-align: center;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 1000;
+  border-bottom: 1px solid black;
+  font-family: "iris";
+}
+.feedback-body {
+  padding: 4vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "iris";
+  font-size:3vh;
+}
+
+.feedback-body__submit:hover{
+  filter:drop-shadow(10px);
+  filter:contrast(70%);
+}
+.feedback-body__message {
+  margin-top: 3.5vh;
+  font-family: "iris";
+}
+.feedback-body__email {
+  font-family: "iris";
+
+}
+.feedback-body__name{
+  margin-top:1vh;
+    font-family: "iris";
+}
+
+.feedback-body button {
+  margin-top: 10px;
+  align-self: flex-end;
+  font-family: "iris";
+}
+
+
+
+
+

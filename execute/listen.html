@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="browser-icon" href="iris-exe.gif" type="image/gif">
+  <link rel="stylesheet" href="styles.css">
+
+
+
+</head>
+
+<body>
+
+  <div class="grid">
+    <div class = "page-container">
+        <a href="home.html">
+    <h4 id="text"></h4></a>
+  <script src="./scrambling-text.js"></script>
+  <script>
+    const TEXTS = [
+    'iRis.EXE',
+    'meRcykilleR :)'
+    ];
+
+    const scrambler = new window.Scrambler();
+    const handleScramble = (text) => {
+      document.getElementById('text').innerHTML = text;
+    }
+
+    let i = 0;
+    function printText() {
+      const targetText = TEXTS[i % TEXTS.length];
+      if (i == 2) {
+        scrambler.scramble(targetText, handleScramble, {
+          characters: Scrambler.CHARACTERS.ALPHABET,
+        });
+      } else {
+        scrambler.scramble(targetText, handleScramble);
+      }
+      setTimeout(printText, 5000);
+      i++;
+    }
+    printText();
+  </script>
+  
+<div id = "button-container">
+    <a href="listen.html">
+    <button class="hero glitch layers" input id='listen' data-text="listen"><span>listen</span>
+</button></a>
+<a href="merch.html"> <button class="hero glitch2 layers" input id='merch' data-text="merch"><span>merch</span>
+</button></a>
+<!--
+<a href="live.html"><button class="hero glitch3 layers3" input id='live' data-text="live"><span>live</span></h2>
+</button></a>
+-->
+<a href="connect.html"><button class="hero glitch4 layers" input id='connect' value="connect"><span>connect</span>
+</button></a>
+<a href="collaborate.html"><button class="hero glitch5 layers5" input id='collaborate' data-text="collaborate"><span>collaborate</span>
+</button></a>
+</div>
+<div id = "p-container">
+  <a href="https://open.spotify.com/artist/2dSZ8lHlYiDFdbdvD0V6vi?si=hvHy2nz9Rb2VtFLw1LfzAA">
+  <img alt="spotify" class="icon" src="./spotify.png"></a>
+  <a href="https://music.apple.com/us/artist/iris-exe/1591975835">
+  <img alt="apple" class="icon" src="./apple.png"></a>
+  <a href="https://music.youtube.com/channel/UCvfXczqN3XcopEh8SAZ_DNA?feature=share">
+  <img alt="youtube" class="icon" src="./youtube.png"></a>
+  <a href="https://soundcloud.com/1ris-exe">
+  <img alt="soundcloud" class="icon" src="./soundcloud.png"></a>
+  <a href="https://iris-exe.bandcamp.com/">
+  <img alt="bandcamp" class="icon" src="./bandcamp.png"></a>
+  <a href="https://store.tidal.com/us/artist/28996161">
+  <img alt="tidal" class="icon" src="./tidal.png"></a>
+
+  <!--<a href="https://music.apple.com/us/artist/iris-exe/1591975835">
+    <button class="hero-btn2 glitch2 layers" input id='apple' data-text="apple"><span>apple</span>
+  </button></a>
+  <a href="https://music.youtube.com/channel/UCvfXczqN3XcopEh8SAZ_DNA?feature=share"><button class="hero-btn2 glitch3 layers3" input id='youtube' data-text="youtube"><span>youtube</span>
+  </button></a>
+  <a href="https://soundcloud.com/1ris-exe"><button class="hero-btn2 glitch4 layers" input id='soundcloud' value="soundcloud"><span>soundcloud</span>
+  </button></a>
+  <a href="https://iris-exe.bandcamp.com/"><button class="hero-btn2 glitch5 layers5" input id='bandcamp' data-text="bandcamp"><span>bandcamp</span>
+  </button></a>
+  <a href="https://audius.co/iris_exe">
+    <button class="hero-btn2 glitch layers" input id='audius' data-text="audius"><span>audius</span>
+    </button></a>
+  -->   
+</div>
+</div>
+
+<!--   
+    <input id='spotify' class='button' value='spotify' /><br>
+  <input id='apple' class='button' value='apple' /><br>
+  <input id='bandcamp' class='button' value='bandcamp' /><br>
+  <input id='youtube' class='button' value='youtube' /><br>
+  <input id='soundcloud' class='button' value='soundcloud' /><br>
+  <input id='audius' class='button' value='audius' /><br>
+  <input id='twitter' class='button' value='twitter' /><br>
+  <input id='instagram' class='button' value='instagram' /><br>
+  --> 
+ 
+  
+
+    
+
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      <div class="grid__item"></div>
+      
+    
+</div>
+
+</body>
+
+</html>

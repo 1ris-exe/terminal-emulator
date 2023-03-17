@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title> iRis.EXE player </title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="win95.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="shortcut icon" type="image/png" href="img/fav.png" />
+    <script>setTimeout("self.close()", 200000 ) // after 5 seconds</script>
+
+</head>
+
+<body>
+    <div class="flicker">
+        <div class="scanlines"> 
+         </div>
+         </div>
+        <div class="windows-box">
+            <div class="windows">
+                <div class="windows-header">
+                    <div class="windows-title">
+                        <span class="cd-player icon">
+                        </span>
+                        <span class="cd-player text">
+                            iRis.EXE
+                        </span>
+                    </div>
+                </div>
+                <div class="windows-container">
+                    <ul class="windows-toolbar">
+                        <li class="toolbar-item"> <a href="#" class="windows-link">File </a> </li>
+                        <li class="toolbar-item"> <a href="../home.html" class="windows-link">Home </a></li>
+                        <li class="toolbar-item"> <a href="#" class="windows-link">Option </a> </li>
+                        <li class="toolbar-item"> <a href="iRis.html" class="windows-link">Terminal </a></li>
+                    </ul>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col s6">
+                    <div class="clock-display">
+                        <span id="track-timer" class="text-clock-display"></span>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="player-control">
+                        <div class="player-control-top">
+                            <button class="player-button" id = "play"> &#9658;</button>
+                            <button class="player-button" id = "pause"> &#10074;&#10074;</button>
+                            <button class="player-button" id = "stop"> &#9724;</button>
+                        </div>
+                        <div class="player-control-bottom">
+                            <button class="player-button-back" id="prev"> &#x23EE;</button>
+                            <button class="player-button"> &#x23F4;</button>
+                            <button class="player-button-skip" > &#x23F5;</button>
+                            <button class="player-button"id ="next"> &#x23ED;</button>
+                            <button class="player-button"> &#x23cf;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="info-row artist">
+                    <div class="col s1">Artist:</div>
+                    <div class="col s11">
+                        <div class="player-input"> <span id = "artist-name" class="artist-name"></span>
+                            <span class="source-name">&lt; D: &gt;</span>
+                            <button class="dropdown-button artist"> &#x25BC;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-row title">
+                    <div class="col s1">Album:</div>
+                    <div class="col s11">
+                        <div id="album-title" class="player-input"></div>
+                    </div>
+                </div>
+                <div class="info-row track">
+                    <div class="col s1">Track:</div>
+                    <div class="col s11">
+                        <div class="player-input"><span id = "track-name" class="track-name"></span>
+                            <button class="dropdown-button track"> &#x25BC;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="windows-row">
+                    <div class="col s6 secondary-timer">
+                        <div class="player-input-of" id ="total-duration"></div>
+                    </div>
+                    <div class="col s6 secondary-timer">
+                        <div class="player-input-of" id = "track-duration"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id = "audio" style="display:hidden" ontimeupdate="updateTimer()" controls src="mercykiller.mp3"></audio>
+   <!--<audio id="audio-stream-handler2" style="display:hidden" ontimeupdate="updatePlayerUI()" controls src="music/artists/iRis/mercykiller/circles-in-the-dark.wav"></audio>
+    <audio id="audio-stream-handler3" style="display:hidden" ontimeupdate="updatePlayerUI()" controls src="music/artists/iRis/mercykiller/sanctuary.wav"></audio>
+     
+     PLACEHOLDER SONG :) -->
+    
+
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="javascript/playerfunctions.js"></script>
+
+</html>

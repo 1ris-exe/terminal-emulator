@@ -1,0 +1,559 @@
+@font-face {
+  font-family: "iris";
+  src: url("XanhMono-Regular.ttf");      
+}
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+}
+
+.terminal{
+padding-left: 1%;
+padding-top: 1%;
+  width: 100%;
+}
+
+p {
+  display: block;
+  width: 0px;
+  margin: 0;
+  font-size: 2rem;
+  color:rgba(69, 69, 69, 0.2);
+  overflow: hidden;
+  font-family: "iris";
+  white-space: nowrap;
+  animation-name: writeText;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  text-shadow: 0 -1px rgb(154, 154, 154);
+}
+a {
+  font-size: 2rem;
+  font-family: "iris";
+  color:rgba(69, 69, 69, 0.2);
+  text-shadow: 0 -1px rgb(154, 154, 154);
+  text-decoration: none;
+}
+a.head-text {
+  font-size: 2rem;
+  font-family: "iris";
+  color:rgba(69, 69, 69, 0.2);
+  text-shadow: 0 -1px rgb(154, 154, 154);
+  text-decoration: none;
+}
+a.head-text:hover {
+  font-size: 2rem;
+  font-family: "iris";
+  color:rgba(69, 69, 69, 0.2);
+  text-shadow: 0 -1px rgb(154, 154, 154);
+  text-decoration: none;
+}
+a:hover{
+  font-size: 2rem;
+  font-family: "iris";
+  color:rgba(0, 0, 0, 0.56);
+  text-shadow: 0 -1px rgb(154, 154, 154);
+  text-decoration:none;
+}
+
+#stems-container{
+  padding-top: 2rem;
+
+}
+
+#charts-container{
+  padding-top: 2rem;
+
+}
+h1{
+  font-size: 2rem;
+  text-align: center;
+  opacity: 0;
+  color:rgba(69, 69, 69, 0.2);
+  font-family:"iris";
+  animation-name: fadeIn;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-delay: 10500ms;
+  text-shadow: 0 -1px rgb(154, 154, 154);
+}
+
+p.delay1 {
+  font-size: 2rem;
+  animation-delay: 2000ms;
+  font-family: "iris";
+
+
+  color:rgba(69, 69, 69, 0.2);
+}
+p.delay2 {
+  animation-delay: 3000ms;
+  font-family: "iris";
+  font-size: 2rem;
+  color:rgba(69, 69, 69, 0.2);
+}
+p.delay3 {
+  animation-delay: 4000ms;
+  font-family: "iris";
+  font-size: 2rem;
+  color:rgba(69, 69, 69, 0.2);
+}
+p.delay4 {
+  animation-delay: 5000ms;
+  font-family: "iris";
+  font-size: 2rem;
+  color:rgba(69, 69, 69, 0.2);
+}
+p.delay5 {
+  animation-delay: 6000ms;
+  font-family: "iris";
+  font-size: 2rem;
+  color:rgba(69, 69, 69, 0.2);
+}
+
+.delay6 {
+  animation-delay: 7000ms;
+  font-family: "iris";
+  font-size: 2rem;
+  color:rgba(69, 69, 69, 0.2);
+}
+.delay7 {
+  animation-delay: 8000ms;
+  font-family: "iris";
+  font-size: 2rem;
+  color:rgba(69, 69, 69, 0.2);
+}
+.delay8 {
+  animation-delay: 9000ms;
+  font-family: "iris";
+  font-size: 2rem;
+  color:rgba(69, 69, 69, 0.2);
+}
+
+
+/* Standard syntax */
+@keyframes writeText {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#loader {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+#loaded {
+  height: 100%;
+  width: 100%;
+  color:rgba(69, 69, 69, 0.811);
+  animation-name: load;
+  animation-duration: 3000ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes load {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 70%;
+  }
+  70% {
+    width: 100%;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+form{
+  position: relative;
+  color: transparent;
+  text-shadow: 0 -1px rgb(154, 154, 154);
+  background-color:rgb(23, 23, 23);
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: middle;
+
+
+}
+
+input, button, textarea {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-image: none;
+  background-color: #5b585c;
+  box-shadow: none;
+  padding: 5px;
+  line-height:2vh;
+}
+input:focus, button:focus, textarea:focus {
+  outline: none;
+}
+
+
+textarea {
+  min-height: 50px;
+  resize: vertical;
+  line-height:2vh;
+}
+.homeButton{
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-image: none;
+  background-color: #5b585c;
+  box-shadow: none;
+  padding: 5px;
+  line-height:2vh;
+  font-family: "iris";
+}
+
+button {
+  cursor: pointer;
+  font-weight: 500;
+  font-family: "iris";
+}
+
+.feedback-card {
+  border: 1px solid black;
+  max-width: 980px;
+  background-color: rgb(132, 123, 136);
+  margin: 0 auto;
+  box-shadow: -1rem 1rem 0 rgba(182, 182, 182, 0.26);
+  font-family: "iris";
+}
+.feedback-header {
+  text-align: center;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 1000;
+  border-bottom: 1px solid black;
+  font-family: "iris";
+}
+.feedback-body {
+  padding: 4vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "iris";
+  font-size:3vh;
+}
+
+.feedback-body__submit{
+  z-index: 1000;
+  font-family: "iris";
+
+  background: transparent;
+  border: transparent;
+  color:rgba(69, 69, 69, 0.821);
+  box-shadow: none;
+  padding: 5px;
+  line-height:2vh;
+  font-family: "iris";
+  font-size: 1rem;
+}
+
+.feedback-body__submit:hover{
+  background: transparent;
+  color:rgb(195, 0, 0)
+}
+.feedback-body__message {
+  margin-top: 3.5vh;
+  font-family: "iris";
+}
+.feedback-body__email {
+  font-family: "iris";
+
+}
+.feedback-body__name{
+  margin-top:1vh;
+    font-family: "iris";
+}
+
+.feedback-body button {
+  margin-top: 10px;
+  align-self: flex-end;
+  font-family: "iris";
+}
+
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  5% {
+   opacity: 0.48287;
+  }
+  10% {
+   opacity: 0.1134;
+  }
+  15.0% {
+   opacity: 0.19543;
+  }
+  20% {
+   opacity: 0.15134;
+  }
+  25% {
+   opacity: 0.4956;
+  }
+  30.0% {
+   opacity: 0.2;
+  }
+  35% {
+   opacity: 0.52;
+  }
+  40% {
+   opacity: 0.2;
+  }
+  45% {
+   opacity: 0.1;
+  }
+  50% {
+   opacity: 0.6;
+  }
+  55.0% {
+   opacity: 0.55487;
+  }
+  60.0% {
+   opacity: 0.9;
+  }
+  65% {
+   opacity: 0.4353;
+  }
+  70% {
+   opacity: 0.2;
+  }
+  75% {
+   opacity: 0.67908;
+  }
+  80% {
+   opacity: 0.1;
+  }
+  85.0% {
+   opacity: 0.675;
+  }
+  90% {
+   opacity: 0.47186;
+  }
+  95% {
+   opacity: 0.875;
+  }
+  100% {
+   opacity: 0.721;
+  }
+  }
+  @keyframes flicker1 {
+   0% {
+     opacity: 1;
+   }
+   5% {
+    opacity: 0.95;
+   }
+   10% {
+    opacity: 0.9;
+   }
+   15.0% {
+    opacity: 0.85;
+   }
+   20% {
+    opacity: 0.8;
+   }
+   25% {
+    opacity: 0.75;
+   }
+   30.0% {
+    opacity: 0.7;
+   }
+   35% {
+    opacity: 0.52;
+   }
+   40% {
+    opacity: 0.62254;
+   }
+   45% {
+    opacity: 0.67
+   }
+   50% {
+    opacity: 0.74;
+   }
+   55.0% {
+    opacity: 0.77;
+   }
+   60.0% {
+    opacity: 0.79;
+   }
+   65% {
+    opacity: 0.8;
+   }
+   70% {
+    opacity: 0.9;
+   }
+   75% {
+    opacity: 0.9;
+   }
+   80% {
+    opacity: 0.9;
+   }
+   85.0% {
+    opacity: 0.9;
+   }
+   90% {
+    opacity: 0.9;
+   }
+   95% {
+    opacity: 0.875;
+   }
+   100% {
+    opacity: 0.9;
+   }
+   }
+  
+ 
+ 
+
+
+/* glow */
+.terminal {
+font-family: "iris";
+
+}
+/* based on
+https://blog.carbonfive.com/2015/01/07/vintage-terminal-effect-in-css3/
+*/
+.scanlines {
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background: linear-gradient(
+   to bottom,
+   rgba(255,255,255,0),
+   rgba(255,255,255,0) 30%,
+   rgba(240, 240, 240, 0.2) 30%,
+   rgba(231, 231, 231, 0.17)
+);
+background-size: 100% .3rem;
+position: fixed;
+pointer-events: none;
+}
+.scanlines1 {
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background: linear-gradient(
+   to bottom,
+   rgba(255,255,255,0),
+   rgba(255,255,255,0) 30%,
+   rgba(109, 109, 109, 0.5) 30%,
+   rgba(115, 115, 115, 0.8)
+);
+background-size: 100% .3rem;
+position: fixed;
+pointer-events: none;
+}
+.scanlines:before {
+position: absolute;
+top: 0px;
+width: 100%;
+height: 5px;
+background: #fff;
+background: linear-gradient(to bottom,
+ rgba(255,0,0,0) 0%,
+ rgba(255,250,250,1) 50%,
+ rgba(255,255,255,0.98) 51%,
+ rgba(255,0,0,0) 100%
+); /* W3C */
+opacity: 1;
+}
+.scanlines:after {
+box-shadow: 0 2px 6px rgba(213, 213, 213, 0.2),
+ inset 0 1px rgba(201, 201, 201, 0.1),
+ inset 0 3px rgba(221, 221, 221, 0.05),
+ inset 0 3px 8px rgba(214, 214, 214, 0.05),
+ inset 0 -5px 10px rgba(213, 213, 213, 0.1);
+}
+
+#term:focus-within + .scanlines:before {
+content: '';
+animation: vline calc(var(--time, 2) * 1s) linear infinite;
+}
+
+@supports (-ms-ime-align:auto) {
+.scanlines:before {
+   content: '';
+   animation: vline 3s linear infinite;
+}
+}
+@keyframes vline {
+to { transform: translate(0, 100vh)}
+}
+/* turn off animation */
+.tv {
+height: 100vh;
+position: relative;
+}
+.tv.collapse {
+animation: size 2s ease-out;
+animation-fill-mode: forwards;
+}
+.tv.collapse:before {
+content: '';
+display: block;
+height: 100%;
+position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+top: 0;
+background: white;
+z-index: 1;
+opacity: 0;
+animation: opacity 2s ease-out;
+animation-fill-mode: forwards;
+}
+
+@keyframes opacity {
+to { opacity:1; }
+}
+@keyframes size {
+50% {
+   transform: scaleX(calc(1 / var(--width)));
+   opacity: 1;
+}
+98% {
+   transform: scaleX(calc(1 / var(--width))) scaleY(calc(1 / var(--height)));
+   opacity: 1;
+}
+100% {
+   transform: scaleX(calc(1 / var(--width))) scaleY(calc(1 / var(--height)));
+   opacity: 0;
+}  
+}
+
+

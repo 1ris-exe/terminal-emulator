@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>i R i s . E X E</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style-3.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+
+  
+  <div id="loader">
+    <div id="loaded"></div>
+  </div>
+  <div class="terminal">
+
+      <div class="scanlines">
+      </div>
+      </div>
+    <p class="delay1">  iRis.EXE</p>
+    <div class = "fade-in"> <p class="delay2">  mercykiller</p> </div>
+    <div class="delay2"> <br></div>
+    <div class="delay3"> <br></div>
+    <p class = "delay4">
+   <a id = 'launch' onclick="onButtonClick()">  launch </a> &emsp;
+   <a href="iRis/listen.html"target="popup"onclick="window.open('iRis/listen.html','popup','width=600,height=600'); return false;">  listen  </a> &emsp;
+ <a href="collaborate.html">  collab  </a> &emsp;
+</p>
+  </div>
+
+  <script>
+
+function setCookie(cname,cvalue,exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    console.log(document.cookie);
+    return document.cookie;
+    }
+
+    
+    function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+    c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+    return c.substring(name.length, c.length);
+    }
+    }
+    return "";
+    }
+
+    function triggerJQuery(){
+      $(document).ready(function() {
+          $("#launch").click(function() {
+          $("#t1").show();
+  });
+});
+    }
+    function onButtonClick(){
+      triggerJQuery();
+      checkCookie();
+    }
+    function openDialogBox(){
+      $(document).ready(function() {
+            document.getElementById('t1').className="show";
+              $('#wrapper').dialog({
+                
+                  autoOpen: true,
+                  title: 'iRis.EXE',
+                  buttons: {
+                      'OK': function () {
+                          user = $('#t1').val();
+                          setCookie("username", user, 30);
+                          //console.log("username: " + user);
+                         window.location.replace('../iris.html');
+                          //listCookies();
+                          $(this).dialog('close');
+                          
+                        },
+                      'Cancel': function () {
+                          user = "";
+                          setCookie("username", user, 30);
+                          $(this).dialog('close');
+                          console.log("username: " + user);
+                          //listCookies();
+                         window.location.replace('../iris.html');
+                        }
+                    }
+                });
+            });
+    }
+    function listCookies() {
+    var theCookies = document.cookie.toString();
+  
+    
+    console.log(theCookies);
+}
+
+    function checkCookie() {
+      let user = getCookie("username");
+        if (user != "") {
+          listCookies();
+            window.location.replace('../iris.html');
+        } else {
+            openDialogBox();
+            }
+        }
+    
+    //checkCookie();
+            </script>
+    
+    <div id="wrapper" class = "hide">
+      
+      username: <input type=text id="t1" name="t1" hidden >
+    </div>
+    
+
+</body>
+<!-- partial -->
+</html>

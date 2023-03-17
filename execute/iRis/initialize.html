@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>iRis.EXE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="../style-4.css">
+</head>
+<!-- partial:index.partial.html -->
+<body>
+
+  <div id="loader">
+    <div id="loaded"></div>
+  </div>
+  <div class="terminal">
+      <div class="scanlines">
+      </div>
+
+  </div>
+  <script>
+
+function setCookie(cname,cvalue,exdays) {
+const d = new Date();
+d.setTime(d.getTime() + (exdays*24*60*60*1000));
+let expires = "expires=" + d.toUTCString();
+document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+let name = cname + "=";
+let decodedCookie = decodeURIComponent(document.cookie);
+let ca = decodedCookie.split(';');
+for(let i = 0; i < ca.length; i++) {
+let c = ca[i];
+while (c.charAt(0) == ' ') {
+c = c.substring(1);
+}
+if (c.indexOf(name) == 0) {
+return c.substring(name.length, c.length);
+}
+}
+return "";
+}
+function checkCookie() {
+  let user = getCookie("username");
+    if (user != "") {
+        window.location.replace('iris.html');
+    } else {
+//user = prompt("username : ","");
+//popup occurs for username input
+      $(document).ready(function() {
+
+          $('#wrapper').dialog({
+              autoOpen: true,
+              title: 'iRis.EXE',
+              buttons: {
+                  'OK': function () {
+                      user = $('#t1').val();
+                      setCookie("username", user, 30);
+                      console.log("username: " + user);
+                      window.location.replace('iris.html');
+                  
+                      $(this).dialog('close');
+                      
+                    },
+                  'Cancel': function () {
+                      user = "";
+                      setCookie("username", user, 30);
+                      $(this).dialog('close');
+                      console.log("username: " + user);
+                      window.location.replace('iris.html');
+                    }
+                }
+            });
+
+        });
+        }
+    }
+
+checkCookie();
+        </script>
+
+<div id="wrapper">
+  username: <input type=text id=t1 name=t1>
+</div>
+
+  
+  <!--<meta http-equiv="refresh" content="10;url=iRis.html" />-->
+</body>
+<!-- partial 
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+-->
+</html>

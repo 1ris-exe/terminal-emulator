@@ -1,0 +1,1885 @@
+/*this block of code is copyright Jakub Jankiewicz, released under the MIT license.*/
+@font-face {
+  font-family: "iris";
+  src: url(XanhMono-Regular.ttf);      
+}
+@media screen and (min-width: 1200px) {
+  :root {
+      --size: 1.4;
+  }
+}
+element.style {
+  height: 79px;
+  width: 721px;
+  color:#c5c5c5
+}
+
+textarea:focus-visible {
+  outline-offset: 0px;
+}
+
+:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+textarea {
+  writing-mode: horizontal-tb !important;
+
+  font-family: 'iris';
+  text-rendering: auto;
+  color: transparent;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+  resize: auto;
+  cursor: text;
+  white-space: pre-wrap;
+  overflow-wrap: keep-all;
+  background-color: field;
+  column-count: initial !important;
+  margin: 0em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+  padding: 2px;
+  visibility: hidden;
+}
+style attribute {
+  width: 100%;
+  --cursor-line: 1;
+}
+.cmd-cursor {
+  --original-color: rgba(205, 201, 201, 0.591);
+}
+.cmd .cmd-cursor {
+  display: inline-block;
+}
+.cmd .cmd-cursor-line > span,
+.cmd .cmd-cursor-line img {
+  display: inline-block;
+}
+.cmd .cmd-cursor.cmd-blink > span[data-text]:not(.emoji):not(.fa):not(.far):not(.fas) span,
+.cmd .cmd-cursor.cmd-blink a,
+.cmd .cmd-cursor.cmd-blink .fa,
+.cmd .cmd-cursor.cmd-blink .far,
+.cmd .cmd-cursor.cmd-blink .fas,
+.cmd .cmd-cursor .emoji {
+      -webkit-animation: terminal-blink 1s infinite linear;
+         -moz-animation: terminal-blink 1s infinite linear;
+          -ms-animation: terminal-blink 1s infinite linear;
+              animation: terminal-blink 1s infinite linear;
+}
+@-webkit-keyframes terminal-blink {
+  0%, 50% {
+      background-color: #aaa;
+      background-color: var(--original-color, #aaa);
+      color: #000;
+      color: var(--background, #000);
+      -webkit-box-shadow: 0 0 calc(var(--glow) * 3px) var(--color, #aaa);
+      box-shadow: 0 0 calc(var(--glow) * 3px) var(--color, #aaa);
+  }
+  50.1%, 100% {
+      background-color: inherit;
+      /* original background is set in emoji that need different style */
+      color: inherit;
+      color: var(--original-background, var(--original-color, #aaa));
+  }
+}
+@-moz-keyframes terminal-blink {
+  0%, 50% {
+      background-color: #aaa;
+      background-color: var(--original-color, #aaa);
+      color: #000;
+      color: var(--background, #000);
+      -webkit-box-shadow: 0 0 calc(var(--glow) * 3px) var(--color, #aaa);
+      box-shadow: 0 0 calc(var(--glow) * 3px) var(--color, #aaa);
+  }
+  50.1%, 100% {
+      background-color: inherit;
+      color: inherit;
+      color: var(--original-background, var(--original-color, #aaa));
+  }
+}
+@keyframes terminal-blink {
+  0%, 50% {
+      background-color: #aaa;
+      background-color: var(--original-color, #aaa);
+      color: #000;
+      color: var(--background, #000);
+      -webkit-box-shadow: 0 0 calc(var(--glow) * 3px) var(--color, #aaa);
+      box-shadow: 0 0 calc(var(--glow) * 3px) var(--color, #aaa);
+  }
+  50.1%, 100% {
+      background-color: inherit;
+      color: inherit;
+      color: var(--original-background, var(--original-color, #aaa));
+      -webkit-box-shadow: none;
+      box-shadow: none;
+  }
+}
+/* GLOW ANIMATION */
+@-webkit-keyframes terminal-glow {
+  0%, 50% {
+      background-color: #aaa;
+      background-color: var(--original-color, #aaa);
+      color: #000;
+      color: var(--background, #000);
+      box-shadow: 0 0 3px #aaa;
+      -webkit-box-shadow: 0 0 3px var(--color, #aaa);
+      box-shadow: 0 0 3px var(--color, #aaa);
+  }
+  50.1%, 100% {
+      background-color: inherit;
+      color: inherit;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+  }
+}
+@-moz-keyframes terminal-glow {
+  0%, 50% {
+      background-color: #aaa;
+      background-color: var(--original-color, #aaa);
+      color: #000;
+      color: var(--background, #000);
+      box-shadow: 0 0 3px #aaa;
+      -moz-box-shadow: 0 0 3px var(--color, #aaa);
+      box-shadow: 0 0 3px var(--color, #aaa);
+  }
+  50.1%, 100% {
+      background-color: inherit;
+      color: inherit;
+      -moz-box-shadow: none;
+      box-shadow: none;
+  }
+}
+@keyframes terminal-glow {
+  0%, 50% {
+      background-color: #aaa;
+      background-color: var(--original-color, #aaa);
+      color: #000;
+      color: var(--background, #000);
+      box-shadow: 0 0 3px #aaa;
+      box-shadow: 0 0 3px var(--color, #aaa);
+  }
+  50.1%, 100% {
+      background-color: inherit;
+      color: inherit;
+      box-shadow: none;
+  }
+}
+/* BAR ANIMATION */
+@-webkit-keyframes terminal-bar {
+0%, 50% {
+    box-shadow: -2px 0 0 -1px #aaa;
+    box-shadow: -2px 0 0 -1px var(--original-color, #aaa);
+}
+50.1%, 100% {
+    box-shadow: none;
+}
+}
+@-moz-keyframes terminal-bar {
+0%, 50% {
+    box-shadow: -2px 0 0 -1px #aaa;
+    box-shadow: -2px 0 0 -1px var(--original-color, #aaa);
+}
+50.1%, 100% {
+    box-shadow: none;
+}
+}
+@keyframes terminal-bar {
+0%, 50% {
+    box-shadow: -2px 0 0 -1px #aaa;
+    box-shadow: -2px 0 0 -1px var(--original-color, #aaa);
+}
+50.1%, 100% {
+    box-shadow: none;
+}
+}
+/* UNDERLINE ANIMATION */
+@-webkit-keyframes terminal-underline {
+0%, 50% {
+    box-shadow: 0 2px 0 #aaa;
+    box-shadow: 0 2px 0 var(--original-color, #aaa);
+}
+50.1%, 100% {
+    box-shadow: none;
+}
+}
+@-moz-keyframes terminal-underline {
+0%, 50% {
+    box-shadow: 0 2px 0 #aaa;
+    box-shadow: 0 2px 0 var(--original-color, #aaa);
+}
+50.1%, 100% {
+    box-shadow: none;
+}
+}
+@keyframes terminal-underline {
+0%, 50% {
+    box-shadow: 0 2px 0 #aaa;
+    box-shadow: 0 2px 0 var(--original-color, #aaa);
+}
+50.1%, 100% {
+    box-shadow: none;
+}
+}
+/* NONE ANIMATION */
+@-webkit-keyframes terminal-none {
+  0%, 100% {
+      background-color: #aaa;
+      background-color: var(--original-color, #aaa);
+      color: #000;
+      color: var(--background, #000);
+      -webkit-box-shadow: 0 0 calc(var(--glow) * 3px) var(--color, #aaa);
+      box-shadow: 0 0 calc(var(--glow) * 3px) var(--color, #aaa);
+  }
+}
+@-moz-keyframes terminal-none {
+  0%, 100% {
+      background-color: #aaa;
+      background-color: var(--original-color, #aaa);
+      color: #000;
+      color: var(--background, #000);
+      -webkit-box-shadow: 0 0 calc(var(--glow) * 3px) var(--color, #aaa);
+      box-shadow: 0 0 calc(var(--glow) * 3px) var(--color, #aaa);
+  }
+}
+@keyframes terminal-none {
+  0%, 100% {
+      background-color: #aaa;
+      background-color: var(--original-color, #aaa);
+      color: #000;
+      color: var(--background, #000);
+      -webkit-box-shadow: 0 0 calc(var(--glow) * 3px) var(--color, #aaa);
+      box-shadow: 0 0 calc(var(--glow) * 3px) var(--color, #aaa);
+  }
+}
+.underline-animation .cmd .cmd-cursor.cmd-blink > span[data-text]:not(.emoji):not(.fa):not(.far):not(.fas) span,
+.underline-animation .cmd .cmd-cursor.cmd-blink a,
+.underline-animation .cmd .cmd-cursor.cmd-blink .fa,
+.underline-animation .cmd .cmd-cursor.cmd-blink .far,
+.underline-animation .cmd .cmd-cursor.cmd-blink .fas,
+.underline-animation .cmd .cmd-cursor .emoji {
+  -webkit-animation-name: terminal-underline;
+     -moz-animation-name: terminal-underline;
+      -ms-animation-name: terminal-underline;
+          animation-name: terminal-underline;
+}
+.glow-animation .cmd .cmd-cursor.cmd-blink > span[data-text]:not(.emoji):not(.fa):not(.far):not(.fas) span,
+.glow-animation .cmd .cmd-cursor.cmd-blink a,
+.glow-animation .cmd .cmd-cursor.cmd-blink .fa,
+.glow-animation .cmd .cmd-cursor.cmd-blink .far,
+.glow-animation .cmd .cmd-cursor.cmd-blink .fas,
+.glow-animation .cmd .cmd-cursor .emoji {
+  -webkit-animation-name: terminal-glow;
+     -moz-animation-name: terminal-glow;
+      -ms-animation-name: terminal-glow;
+          animation-name: terminal-glow;
+}
+.bar-animation .cmd .cmd-cursor.cmd-blink > span[data-text]:not(.emoji):not(.fa):not(.far):not(.fas) span,
+.bar-animation .cmd .cmd-cursor.cmd-blink a,
+.bar-animation .cmd .cmd-cursor.cmd-blink .fa,
+.bar-animation .cmd .cmd-cursor.cmd-blink .far,
+.bar-animation .cmd .cmd-cursor.cmd-blink .fas,
+.bar-animation .cmd .cmd-cursor .emoji {
+  -webkit-animation-name: terminal-bar;
+     -moz-animation-name: terminal-bar;
+      -ms-animation-name: terminal-bar;
+          animation-name: terminal-bar;
+}
+/*
+ Internet Explorer & Edge *, Safari ≤ 6
+ source: https://w3reign.com/internet-explorer-edge-css-hacks/
+*/
+
+
+@supports (-ms-ime-align:auto) {
+  .cmd .cmd-clipboard {
+      margin-left: -9999px;
+  }
+  @keyframes terminal-blink {
+      0%, 50% {
+          background-color: var(--original-color, #aaa);
+          color: var(--background, rgba(0, 0, 0, 0));
+      }
+      50.1%, 100% {
+          background-color: var(--background, rgba(0, 0, 0, 0));
+          color: var(--original-color, #aaa);
+      }
+  }
+  @keyframes terminal-bar {
+      0%, 50% {
+          border-left-color: var(--color, #aaa);
+      }
+      50.1%, 100% {
+          border-left-color: var(--background, rgba(0, 0, 0, 0));
+      }
+  }
+  @keyframes terminal-underline {
+      0%, 50% {
+          border-bottom-color: var(--color, #aaa);
+          line-height: 12px;
+          line-height: calc(var(--size, 1) * (12px / var(--pixel-density, 1)));
+      }
+      50.1%, 100% {
+          border-bottom-color: var(--background, rgba(0, 0, 0, 0));
+          line-height: 12px;
+          line-height: calc(var(--size, 1) * (12px / var(--pixel-density, 1)));
+      }
+  }
+}
+/* IE hack Edge one don't work in IE11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .cmd .cmd-clipboard {
+      margin-left: -9999px;
+  }
+  .underline-animation .cursor.blink span span {
+      margin-top: 1px;
+  }
+  @-ms-keyframes terminal-blink {
+      0%, 50% {
+          background-color: #aaa;
+          color: rgba(0, 0, 0, 0);
+      }
+      50.1%, 100% {
+          background-color: rgba(0, 0, 0, 0);
+          color: #aaa;
+      }
+  }
+}
+.terminal h1::-moz-selection,
+.terminal h2::-moz-selection,
+.terminal h3::-moz-selection,
+.terminal h4::-moz-selection,
+.terminal h5::-moz-selection,
+.terminal h6::-moz-selection,
+.terminal pre::-moz-selection,
+.terminal td::-moz-selection,
+.terminal .terminal-output::-moz-selection,
+.terminal .terminal-output div div::-moz-selection,
+.terminal .terminal-output div div a::-moz-selection,
+.terminal .terminal-output span[data-text]::-moz-selection,
+.terminal .terminal-output span[data-text]:not(.far):not(.fa):not(.fas) span::-moz-selection,
+.terminal .terminal-output .raw div::-moz-selection,
+.cmd span[data-text]::-moz-selection,
+.cmd span[data-text]:not(.far):not(.fa):not(.fas) span::-moz-selection {
+  background-color: #aaa;
+  color: #000;
+}
+/* this don't work in Chrome
+.terminal tr td::-moz-selection {
+  border-color: #000;
+}
+.terminal tr td::selection {
+  border-color: #000;
+}
+*/
+/* fix selection/click on text that was echo without newline while prompt is relocated */
+.terminal .cmd {
+  pointer-events: none;
+}
+.terminal .cmd-prompt * {
+  pointer-events: visible;
+}
+.cmd-prompt > span:first-child {
+  margin-left: var(--prompt-offset);
+}
+.terminal .cmd-wrapper > div:not(.cmd-cursor-line),
+.terminal .cmd-cursor-line > span,
+.terminal .cmd textarea {
+  pointer-events: visible;
+}
+.terminal h1::selection,
+.terminal h2::selection,
+.terminal h3::selection,
+.terminal h4::selection,
+.terminal h5::selection,
+.terminal h6::selection,
+.terminal pre::selection,
+.terminal td::selection,
+.terminal .terminal-output::selection,
+.terminal .terminal-output div div::selection,
+.terminal .terminal-output div div a::selection,
+.terminal .terminal-output span[data-text]::selection,
+.terminal .terminal-output span[data-text]:not(.far):not(.fa):not(.fas) span::selection,
+.terminal .terminal-output .raw div::selection,
+.cmd span[data-text]:not(.far):not(.fa):not(.fas) span::selection {
+  /*
+   * use rgba to fix transparent selection in chrome
+   * http://stackoverflow.com/questions/7224445/css3-selection-behaves-differently-in-ff-chrome
+   */
+  background-color: rgba(170, 170, 170, 0.99);
+  color: #000;
+}
+.cmd .cmd-cursor.cmd-blink {
+  color: var(--color, #aaa);
+  background-color: var(--background, rgba(0, 0, 0, 0));
+}
+.cmd .cmd-cursor.cmd-blink > span[data-text]:not(.emoji):not(.fa):not(.far):not(.fas) span,
+.cmd .cmd-cursor.cmd-blink a,
+.cmd .cmd-cursor.cmd-blink .fa,
+.cmd .cmd-cursor.cmd-blink .far,
+.cmd .cmd-cursor.cmd-blink .fas,
+.cmd .cmd-cursor.cmd-blink .emoji {
+  -webkit-animation: var(--animation, terminal-blink) 1s infinite linear;
+     -moz-animation: var(--animation, terminal-blink) 1s infinite linear;
+      -ms-animation: var(--animation, terminal-blink) 1s infinite linear;
+          animation: var(--animation, terminal-blink) 1s infinite linear;
+  --original-background: inherit;
+}
+div#terminal.terminal{
+  width:100%;
+  height:100%;
+}
+.terminal-wrapper {
+  --color: var(--base-color);
+  --background: var(--base-background);
+}
+.cmd .token {
+  --original-color: var(--color);
+}
+.terminal .terminal-blink, .cmd .terminal-blink {
+  animation: terminal-ansi-blink 1s steps(2, start) infinite;
+  -webkit-animation: terminal-ansi-blink 1s steps(2, start) infinite;
+}
+/* Allow transparent background #698 */
+.terminal .terminal-output,
+.terminal .terminal-output * {
+--background: transparent;
+}
+
+.terminal .cmd::selection,
+.terminal .cmd *::selection,
+.terminal .terminal-output::selection,
+.terminal .terminal-output *::selection {
+--background: var(--base-background);
+}
+@keyframes terminal-ansi-blink {
+  to {
+      color: var(--background);
+  }
+}
+@-webkit-keyframes terminal-ansi-blink {
+  to {
+      color: var(--background);
+   }
+}
+@media (prefers-reduced-motion) {
+  :root {
+      --animation: terminal-none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .navbar{
+    font-family: "iris";
+    justify-content: center;
+    font-size: .85em;}
+  .navbar a {
+    float: center;
+          text-align: center;
+          color: rgba(214, 214, 214, 0.811);
+          font-size: .85em;
+          font-family: "iris";
+          padding-left: 20px;
+          padding-right: 20px;
+  }
+
+  a:link {
+    color: rgba(214, 214, 214, 0.811);
+    background-color: transparent;
+    font-family: "iris";
+    text-decoration: none;
+  }
+  #terminal{
+    overflow-wrap: normal;
+
+    word-break: keep-all;
+  }
+
+  .terminal-wrapper{
+    overflow-wrap: normal;
+
+    word-break: keep-all;
+
+  }
+  .terminal-scroller{
+    overflow-wrap: normal;
+
+    word-break: keep-all;
+  }
+  span[data-text]{
+    overflow-wrap: normal;
+
+    word-break: keep-all;
+  }
+  
+  a:hover {
+    color: transparent;
+    text-decoration:dashed;
+    font-family: "iris";
+    background-color: transparent;
+    text-shadow: 0 0 4px rgba(214, 214, 214, 0.811);
+  }
+  
+  a.active {
+    color: rgba(214, 214, 214, 0.811);
+    background-color: transparent;
+    font-family: "iris";
+    text-shadow: 0 0 14px white;
+  }
+  a.active:hover{
+    color: transparent;
+    font-family: "iris";
+    text-shadow: 0 0 1.5px rgba(214, 214, 214, 0.811);
+  }
+  a.inactive {
+    font-family: "iris";
+    color: rgba(214, 214, 214, 0.811);
+    background-color: transparent;
+  }
+  a.inactive:hover{
+    font-family: "iris";
+    color:  rgba(214, 214, 214, 0.811);
+    text-shadow: 0 0 1.9px;
+    text-decoration:double;
+  }
+  #audio{
+    font-family: "iris";
+    background: black;
+    color: rgba(214, 214, 214, 0.811);
+    height: 60px;
+      margin: 0;
+      position: relative;
+      width: 400px;
+  }
+  
+
+  .blinking-cursor {
+    font-family: "iris";
+    font-size: .85em;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+  }
+  
+  }
+  
+  @media screen and (max-width: 950px) {
+    .navbar{
+      font-family: "iris";
+      justify-content: center;
+      font-size: .85em;
+    }
+    .navbar a {
+      font-family: "iris";
+      float: center;
+            text-align: center;
+            color: rgba(214, 214, 214, 0.811);
+            font-size: .85em;
+            padding-left: 20px;
+            padding-right: 20px;
+    }
+  
+    a:link {
+      font-family: "iris";
+      color: rgba(214, 214, 214, 0.811);
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      font-family: "iris";
+      color: transparent;
+      text-decoration:dashed;
+      background-color: transparent;
+      text-shadow: 0 0 4px #000;
+    }
+    .cmd-cursor {
+      --original-color: rgba(214, 214, 214, 0.811);
+  }
+    
+    a.active {
+      font-family: "iris";
+      color: rgba(214, 214, 214, 0.811);
+      background-color: transparent;
+      text-shadow: 0 0 1.2px white;
+    }
+    a.active:hover{
+      font-family: "iris";
+      color: transparent;
+      text-shadow: 0 0 1.5px rgba(214, 214, 214, 0.811);
+    }
+    a.inactive {
+      font-family: "iris";
+      color: rgba(214, 214, 214, 0.811);
+      background-color: transparent;
+    }
+    a.inactive:hover{
+      font-family: "iris";
+      color:  rgba(214, 214, 214, 0.811);
+      text-shadow: 0 0 1.9px;
+      text-decoration:double;
+    }
+  
+    .blinking-cursor {
+      font-family: "iris";
+      font-size: .85em;
+      -webkit-animation: 1s blink step-end infinite;
+      -moz-animation: 1s blink step-end infinite;
+      -ms-animation: 1s blink step-end infinite;
+      -o-animation: 1s blink step-end infinite;
+      animation: 1s blink step-end infinite;
+    }
+  
+  }
+  
+  
+  @media screen and (max-width: 650px) {
+   .navbar{
+    justify-content: center;
+    font-size: .85em;
+    font-family: "iris";
+  }
+  .navbar a {
+    float: center;
+          text-align: center;
+          color: rgba(214, 214, 214, 0.811);
+          font-family: "iris";
+          font-size: .85em;
+          padding-left: 20px;
+          padding-right: 20px;
+  }
+
+  a:link {
+    color:rgba(214, 214, 214, 0.811);
+    background-color: transparent;
+    text-decoration: none;
+    font-family: "iris";
+  }
+  span {
+    color: rgba(237, 237, 237, 0.811);
+    background-color: transparent;
+    text-decoration: none;
+    font-family: "iris";
+  }
+
+
+  a:hover {
+    color: transparent;
+    font-family: "iris";
+    text-decoration:dashed;
+    background-color: transparent;
+    text-shadow: 0 0 4px #000;
+  }
+  
+  a.active {
+    color: rgba(214, 214, 214, 0.811);
+    font-family: "iris";
+    background-color: transparent;
+    text-shadow: 0 0 1.2px white;
+  }
+  a.active:hover{
+    color: transparent;
+    font-family: "iris";
+    text-shadow: 0 0 1.5px rgba(214, 214, 214, 0.811);
+  }
+  a.inactive {
+    color: rgba(214, 214, 214, 0.811);
+    font-family: "iris";
+    background-color: transparent;
+  }
+  a.inactive:hover{
+    color:  rgba(214, 214, 214, 0.811);
+    font-family: "iris";
+    text-shadow: 0 0 1.9px;
+    text-decoration:double;
+  }
+  audio::-webkit-media-controls-panel {
+    background-color: rgb(91, 6, 6);
+  }
+
+  .blinking-cursor {
+    font-size: .85em;
+    font-family: "iris";
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+  }
+  }
+  @media screen and (max-width: 480px) {
+    .navbar{
+      justify-content: center;
+      font-size: .85em;
+    }
+    .navbar a {
+      float: center;
+            text-align: center;
+            color: rgba(214, 214, 214, 0.811);
+            font-family: "iris";
+            font-size: .85em;
+            padding-left: 20px;
+            padding-right: 20px;
+    }
+  
+    a:link {
+      color: rgba(214, 214, 214, 0.811);
+      font-family: "iris";
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      color: transparent;
+      font-family: "iris";
+      text-decoration:dashed;
+      background-color: transparent;
+      text-shadow: 0 0 4px #000;
+    }
+    
+    a.active {
+      color: rgba(214, 214, 214, 0.811);
+      font-family: "iris";
+      background-color: transparent;
+      text-shadow: 0 0 1.2px white;
+    }
+    a.active:hover{
+      color: transparent;
+      font-family: "iris";
+      text-shadow: 0 0 1.5px rgba(214, 214, 214, 0.811);
+    }
+    a.inactive {
+      color: rgba(214, 214, 214, 0.811);
+      font-family: "iris";
+      background-color: transparent;
+    }
+    a.inactive:hover{
+      color:  rgba(214, 214, 214, 0.811);
+      font-family: "iris";
+      text-shadow: 0 0 1.9px;
+      text-decoration:double;
+    }
+  
+    .blinking-cursor {
+      font-size: .85em;
+      -webkit-animation: 1s blink step-end infinite;
+      -moz-animation: 1s blink step-end infinite;
+      -ms-animation: 1s blink step-end infinite;
+      -o-animation: 1s blink step-end infinite;
+      animation: 1s blink step-end infinite;
+    }
+  
+  }
+  
+
+@media screen and (max-width: 320px){
+  body {
+    padding-right: 10px;
+    background-color: #0f0f0f;
+    color:rgba(214, 214, 214, 0.811);
+    font-family: "iris";
+    font-size: .85em;
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=116347);
+  }
+  
+  body-1 {
+    width: 100%;
+    background-color: #0f0f0f;
+    background-image: url('SMILE-FINAL.jpg');
+    color: rgba(214, 214, 214, 0.811);
+    text-align: center;
+    font-family: "iris";
+    font-size: .85em;
+  
+  }
+
+  
+  footer {
+    position: absolute;
+    padding-bottom: 5px;
+    width: 100%;
+    height: 2.5em;
+  }
+  
+  .footer-container {
+    color:rgba(214, 214, 214, 0.811);
+    font-family: "iris";
+    font-size: .85em;
+    text-align: center;
+  }
+  .navbar{
+    justify-content: center;
+    font-size: .85em;
+  }
+  .navbar a {
+    float: center;
+          text-align: center;
+          color: rgba(214, 214, 214, 0.811);
+          font-size: .85em;
+          padding-left: 20px;
+          padding-right: 20px;
+  }
+
+  a:link {
+    color: rgba(214, 214, 214, 0.811);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: transparent;
+    text-decoration:dashed;
+    background-color: transparent;
+    text-shadow: 0 0 4px #000;
+  }
+  
+  a.active {
+    color: rgba(214, 214, 214, 0.811);
+    background-color: transparent;
+    text-shadow: 0 0 1.2px white;
+  }
+  a.active:hover{
+    color: transparent;
+    text-shadow: 0 0 1.5px rgba(214, 214, 214, 0.811);
+  }
+  a.inactive {
+    color: rgba(214, 214, 214, 0.811);
+    background-color: transparent;
+  }
+  a.inactive:hover{
+    color:  rgba(214, 214, 214, 0.811);
+    text-shadow: 0 0 1.9px;
+    text-decoration:double;
+  }
+
+  
+  .blinking-cursor {
+    font-size: .85em;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+  }
+
+}
+
+.img-container{
+  position: absolute!important;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  width:100%;
+  z-index: 1000000;
+  background-color: black;
+  opacity: 1;
+
+
+
+}
+.img {
+  position: absolute;
+  opacity: 1.0!important;
+
+}
+
+
+
+.flicker {
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0);
+  opacity: 0;
+  z-index: 1000;
+  pointer-events: none;
+  animation: flicker .8s infinite;
+}
+.title1{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 10vw;
+  padding-bottom: 100px;
+}
+.article1{
+  vertical-align: middle;
+  padding-top: 100px;
+  padding-left: 500px;
+  padding-right: 500px;
+  padding-bottom: 100px;
+  font-size: 2vw;
+}
+
+.flicker1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(192, 187, 187, 0.267);
+  opacity: .3;
+  z-index: 100000;
+  pointer-events: none;
+  animation: flicker 8s infinite;
+}
+
+div.cmd-editable{
+  visibility:hidden;
+  overflow-wrap:normal;
+}
+
+body {
+  overflow-wrap: normal;
+  padding-right: 10px;
+  word-break: keep-all;
+  padding-right: 10px;
+  background-color: #0f0f0f;
+  color:  rgba(214, 214, 214, 0.811);
+  font-family: "iris";
+  font-size: .85em;
+
+}
+
+body-1 {
+  width: 100%;
+  background-color: #0f0f0f;
+  color:  rgba(214, 214, 214, 0.811);
+  text-align: center;
+  font-family: "iris";
+  font-size: 24px;
+
+
+}
+
+footer {
+  position: absolute;
+  padding-bottom: 10px;
+  width: 100%;
+  height: 2.5em;
+
+}
+
+.footer-container {
+  color:  rgba(214, 214, 214, 0.811);
+  font-family: "iris";
+  font-size: 12px;
+  text-align: center;
+
+}
+
+#page-container {
+  position: relative;
+  min-height: 100%;
+
+}
+
+#content-wrap {
+  padding-bottom: 2.5em;    /* Footer height */
+}
+
+
+#terminal-error-mn{
+  color: #8a0000;
+}
+
+header1 {
+  color:  rgba(214, 214, 214, 0.811);
+  font-family: "iris";
+}
+
+.button-container{
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  font-family: "iris";
+}
+.termButton-container{
+  text-align: center;
+  display: inline-block;
+  width: fit-content;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-family: "iris";
+}
+.button {
+  background-color: rgba(214, 214, 214, 0.811);
+  color: black;
+  text-align: center;
+  width: fit-content;
+  border-radius: 8px;
+  padding: 5px;
+  font-size: 20px;
+  z-index: 1000;
+
+  font-family: "iris";
+}
+
+.button-hover {
+  background-color: rgba(47, 63, 34, 0.99);
+  font-family: "iris";
+
+}
+.termButton {
+  background-color: rgba(214, 214, 214, 0.811);
+  color: black;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding: 8px 2px;
+  border-radius: 8px;
+  font-family: "iris";
+
+  text-align: center;
+  font-size: 20px;
+  z-index: 1000;
+
+}
+#homeButtonContainer {
+  display: inline-block;
+  width: fit-content;
+  padding-left: 2px;
+  font-family: "iris";
+  
+}
+#homeButton {
+
+  z-index: 10000;
+  font-family: "iris";
+  position: relative;
+  background: #494949;
+	border-bottom: 6px inset rgba(0,0,0,.5);
+	border-left: 6px inset rgba(0,0,0,.5);
+	border-right: 6px inset rgba(198, 195, 195, 0.5);
+	border-top: 6px inset rgba(152, 151, 151, 0.5);
+	box-sizing: border-box;
+	color: rgba(209, 201, 201, 0.814);
+  font-size: .85em;
+	display: inline-block;
+	margin: .85em;
+	padding: .5em;
+	width: auto;
+	
+}
+
+#small{
+ color: #8a0000;
+ font-size: .85em;
+
+}
+#small1{
+  color: #c5c5c5;
+  font-size: 1..85em;
+ }
+ #small2{
+  color: #848484;
+  font-size: 1.2em;
+ }
+ #small3{
+  color: #4f4f4f;
+  font-size: 1.3em;
+ }
+ #small4{
+  color: #8f0000;
+  font-size: 3em;
+ }
+ #small5{
+  color: #5c0000;
+  font-size: .85em;
+ }
+.button:hover{
+  background-color: rgba(63, 34, 34, 0.99);
+
+}
+#homeButton2 {
+
+  z-index: 10000;
+  font-family: "iris";
+
+  background: #494949;
+	border-bottom: 6px inset rgba(0,0,0,.5);
+	border-left: 6px inset rgba(0,0,0,.5);
+	border-right: 6px inset rgba(198, 195, 195, 0.5);
+	border-top: 6px inset rgba(152, 151, 151, 0.5);
+	box-sizing: border-box;
+	color: rgba(209, 201, 201, 0.814);
+  font-size: .85em;
+	display: inline-block;
+	margin: .85em;
+	padding: .5em;
+	width: auto;
+	
+}
+
+#homeButton2:hover {
+  z-index: 10000;
+  font-family: "iris";
+
+  background: #ffffff;
+	border-bottom: 6px inset rgba(0,0,0,.5);
+	border-left: 6px inset rgba(0,0,0,.5);
+	border-right: 6px inset rgba(198, 195, 195, 0.5);
+	border-top: 6px inset rgba(152, 151, 151, 0.5);
+	box-sizing: border-box;
+	color: rgba(80, 80, 80, 0.814);
+	display: inline-block;
+	margin: .85em;
+	padding: .5em;
+	width: auto;
+  font-size: .85em;
+
+}
+#homeButton:hover {
+  z-index: 10000;
+  font-family: "iris";
+
+  background: #410202;
+	border-bottom: 6px inset rgba(0,0,0,.5);
+	border-left: 6px inset rgba(0,0,0,.5);
+	border-right: 6px inset rgba(198, 195, 195, 0.5);
+	border-top: 6px inset rgba(152, 151, 151, 0.5);
+	box-sizing: border-box;
+	color: rgba(255, 255, 255, 0.814);
+	display: inline-block;
+	margin: .85em;
+	padding: .5em;
+	width: auto;
+  font-size: .85em;
+
+}
+.input {
+  background-color:rgba(195, 179, 215, 0.811);
+  color: black;
+
+}
+.required-email {
+  background-color:rgba(195, 179, 215, 0.811);
+  color: black;
+
+}
+
+.FNAME {
+  background-color:rgba(195, 179, 215, 0.811);
+  color: black;
+
+}
+
+.LNAME {
+  background-color:rgba(195, 179, 215, 0.811);
+  color: black;
+
+}
+
+.birthday{
+  background-color:rgba(195, 179, 215, 0.811);
+  color: black;
+
+}
+
+.response{
+  background-color:rgba(195, 179, 215, 0.811);
+  color: black;
+
+}
+
+  .navbar{
+    justify-content: center;
+    font-size: .85em;
+  
+  }
+  
+    
+  
+    @keyframes flicker {
+     0% {
+       opacity: 1;
+     }
+     5% {
+      opacity: 1;
+     }
+     10% {
+      opacity: 0.9;
+     }
+     15.0% {
+      opacity: 0.9;
+     }
+     20% {
+      opacity: 1;
+     }
+     25% {
+      opacity: .96;
+     }
+     30.0% {
+      opacity: 0.92;
+     }
+     35% {
+      opacity: 0.75;
+     }
+     40% {
+      opacity: 1;
+     }
+     45% {
+      opacity: 1;
+     }
+     50% {
+      opacity: .97;
+     }
+     55.0% {
+      opacity: 1;
+     }
+     60.0% {
+      opacity: .89;
+     }
+     65% {
+      opacity: 1;
+     }
+     70% {
+      opacity: 1;
+     }
+     75% {
+      opacity: .98;
+     }
+     80% {
+      opacity: 1;
+     }
+     85.0% {
+      opacity: .8;
+     }
+     100% {
+      opacity: 1;
+     }
+     95% {
+      opacity: .91;
+     }
+     100% {
+      opacity: 0.89;
+     }
+     }
+     @keyframes flicker1 {
+      0% {
+        opacity: 1;
+      }
+      5% {
+       opacity: 0.95;
+      }
+      10% {
+       opacity: 0.9;
+      }
+      15.0% {
+       opacity: 0.85;
+      }
+      20% {
+       opacity: 0.8;
+      }
+      25% {
+       opacity: 0.75;
+      }
+      30.0% {
+       opacity: 0.7;
+      }
+      35% {
+       opacity: 0.52;
+      }
+      40% {
+       opacity: 0.62254;
+      }
+      45% {
+       opacity: 0.67
+      }
+      50% {
+       opacity: 0.74;
+      }
+      55.0% {
+       opacity: 0.77;
+      }
+      60.0% {
+       opacity: 0.79;
+      }
+      65% {
+       opacity: 0.8;
+      }
+      70% {
+       opacity: 0.9;
+      }
+      75% {
+       opacity: 0.9;
+      }
+      80% {
+       opacity: 0.9;
+      }
+      85.0% {
+       opacity: 0.9;
+      }
+      100% {
+       opacity: 0.9;
+      }
+      95% {
+       opacity: 0.875;
+      }
+      100% {
+       opacity: 0.9;
+      }
+      
+      }
+      /*iPhone 14*/
+@media only screen
+and (width: 390px) 
+and (device-height: 844px)
+and (-webkit-device-pixel-ratio: 3) { 
+
+  .terminal{
+    font-size: .85em;
+  }
+  .cmd-prompt{
+    font-size: .85em;
+  }
+  .cmd{
+    font-size: .85em;
+  }
+  body{
+    font-size: .85em;
+  }
+  div#terminal.terminal.terminal-mobile {
+    overflow-wrap: normal!important;
+    height:840px!important;
+    width:336px!important;
+    word-break: keep-all!important;
+    --pixel-density: 800;
+    --char-width: 3;
+    --terminal-x: 0;
+    --terminal-y: 222;
+    --terminal-scroll: 0;
+  }
+  span[data-text] {
+    overflow-wrap: normal!important;
+    word-break: keep-all!important;
+    width:336px!important;
+}
+}
+/*samsung galaxy s8*/
+@media only screen
+and (width: 360px) 
+and (device-height: 740px)
+and (-webkit-device-pixel-ratio: 3) { 
+
+  .terminal{
+    font-size: .85em;
+  }
+  .cmd-prompt{
+    font-size: .85em;
+  }
+  .cmd{
+    font-size: .85em;
+  }
+  body{
+    font-size: .85em;
+  }
+  div#terminal.terminal.terminal-mobile {
+    overflow-wrap: normal!important;
+    height:740px!important;
+    width:360px!important;
+    word-break: keep-all!important;
+    --pixel-density: 800;
+    --char-width: 3;
+    --terminal-x: 0;
+    --terminal-y: 222;
+    --terminal-scroll: 0;
+  }
+  span[data-text] {
+    overflow-wrap: normal!important;
+    word-break: keep-all!important;
+    width:360px!important;
+}
+}
+
+/*iPhone 14 Pro*/
+@media only screen
+    and (width: 393px) 
+    and (device-height: 852px)
+    and (-webkit-device-pixel-ratio: 3) {
+      .terminal{
+        font-size: .85em;
+      }
+      .cmd-prompt{
+        font-size: .85em;
+      }
+      .cmd{
+        font-size: .85em;
+      }
+      body{
+        font-size: .85em;
+      }
+      div#terminal.terminal.terminal-mobile {
+        overflow-wrap: normal!important;
+        height:848px!important;
+        width:349px!important;
+        word-break: keep-all!important;
+        --pixel-density: 800;
+        --char-width: 3;
+        --terminal-x: 0;
+        --terminal-y: 222;
+        --terminal-scroll: 0;
+      }
+      span[data-text] {
+        overflow-wrap: normal!important;
+        word-break: keep-all!important;
+        width:349px!important;
+    }
+     }
+
+/*iPhone 14 Pro Max*/
+@media only screen
+    and (device-width: 430px) 
+    and (device-height: 932px) 
+    and (-webkit-device-pixel-ratio: 3) {
+      .terminal{
+        font-size: .85em;
+      }
+      .cmd-prompt{
+        font-size: .85em;
+      }
+      .cmd{
+        font-size: .85em;
+      }
+      body{
+        font-size: .85em;
+      }
+      div#terminal.terminal.terminal-mobile {
+        overflow-wrap: normal!important;
+        height:928!important;
+        width:400!important;
+        word-break: keep-all!important;
+        --pixel-density: 800;
+        --char-width: 3;
+        --terminal-x: 0;
+        --terminal-y: 222;
+        --terminal-scroll: 0;
+      }
+      span[data-text] {
+        overflow-wrap: normal!important;
+        word-break: keep-all!important;
+        width:400px!important;
+    }
+     }
+     
+    /*for iphone13 mini*/
+      @media only screen 
+      and (device-width: 375px) 
+      and (device-height: 812px) 
+      and (-webkit-device-pixel-ratio: 3) { 
+        .terminal{
+          font-size: .85em;
+        }
+        .cmd-prompt{
+          font-size: .85em;
+        }
+        .cmd{
+          font-size: .85em;
+        }
+        body{
+          font-size: .85em;
+        }
+        div#terminal.terminal.terminal-mobile {
+          overflow-wrap: normal!important;
+          height:808px!important;
+          width:330px!important;
+          word-break: keep-all!important;
+          --pixel-density: 800;
+          --char-width: 3;
+          --terminal-x: 0;
+          --terminal-y: 222;
+          --terminal-scroll: 0;
+        }
+        span[data-text] {
+          overflow-wrap: normal!important;
+          word-break: keep-all!important;
+          width:330px!important;
+      }
+      }
+      /*for iphone 13 and iphone 13 pro*/
+      @media only screen 
+    and (device-width: 390px) 
+    and (device-height: 844px) 
+    and (-webkit-device-pixel-ratio: 3) { 
+      .terminal{
+        font-size: .85em;
+      }
+      .cmd-prompt{
+        font-size: .85em;
+      }
+      .cmd{
+        font-size: .85em;
+      }
+      body{
+        font-size: .85em;
+      }
+      div#terminal.terminal.terminal-mobile {
+        overflow-wrap: normal!important;
+        height:840px!important;
+        width:340px!important;
+        word-break: keep-all!important;
+      
+      }
+      span[data-text] {
+        overflow-wrap: normal!important;
+        word-break: keep-all!important;
+        width:340px!important;
+    }
+    }
+
+    /*for iphone 13 pro max*/
+    @media only screen 
+    and (device-width: 428px) 
+    and (device-height: 926px) 
+    and (-webkit-device-pixel-ratio: 3) {
+      .terminal{
+        font-size: .85em;
+      }
+      .cmd-prompt{
+        font-size: .85em;
+      }
+      .cmd{
+        font-size: .85em;
+      }
+      body{
+        font-size: .85em;
+      }
+      div#terminal.terminal.terminal-mobile {
+        overflow-wrap: normal!important;
+        height:900px!important;
+    width:420px!important;
+        word-break: keep-all!important;
+
+      }
+      span[data-text] {
+        overflow-wrap: normal!important;
+        word-break: keep-all!important;
+        width:420px!important;
+    }
+     }
+
+    /*iphone x*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 3) {
+      .terminal{
+        font-size: .85em;
+      }
+      .cmd-prompt{
+        font-size: .85em;
+      }
+      .cmd{
+        font-size: .85em;
+      }
+      body{
+        font-size: .85em;
+      }
+
+      div#terminal.terminal.terminal-mobile {
+        overflow-wrap: normal!important;
+        height:890px!important;
+    width:400px!important;
+        word-break: keep-all!important;
+
+      }
+      span[data-text] {
+        overflow-wrap: normal!important;
+        word-break: keep-all!important;
+        width:400px!important;
+    }
+      
+     }
+
+
+
+/* glow */
+.terminal {
+  font-family: "iris";
+  text-shadow: 0 0.2em .5em #390505;
+  padding-right: 5vh;
+
+}
+/* based on
+https://blog.carbonfive.com/2015/01/07/vintage-terminal-effect-in-css3/
+*/
+.scanlines {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0),
+      rgba(255,255,255,0) 30%,
+      rgba(0,0,0,.2) 30%,
+      rgba(0,0,0,.17)
+  );
+  background-size: 100% .3em;
+  position: fixed;
+  pointer-events: none;
+}
+.scanlines1 {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0),
+      rgba(255,255,255,0) 30%,
+      rgba(0,0,0,.5) 30%,
+      rgba(0,0,0,.8)
+  );
+  background-size: 100% .3em;
+  position: fixed;
+  pointer-events: none;
+}
+.scanlines:before {
+position: absolute;
+top: 0px;
+width: 100%;
+height: 5px;
+background: #fff;
+background: linear-gradient(to bottom,
+    rgba(255,0,0,0) 0%,
+    rgba(255,250,250,1) 50%,
+    rgba(255,255,255,0.98) 51%,
+    rgba(255,0,0,0) 100%
+); /* W3C */
+opacity: 1;
+}
+.scanlines:after {
+box-shadow: 0 2px 6px rgba(25,25,25,0.2),
+    inset 0 1px rgba(50,50,50,0.1),
+    inset 0 3px rgba(50,50,50,0.05),
+    inset 0 3px 8px rgba(64,64,64,0.05),
+    inset 0 -5px 10px rgba(25,25,25,0.1);
+}
+
+#term:focus-within + .scanlines:before {
+content: '';
+animation: vline calc(var(--time, 2) * 1s) linear infinite;
+}
+
+@supports (-ms-ime-align:auto) {
+  .scanlines:before {
+      content: '';
+      animation: vline 3s linear infinite;
+  }
+}
+@keyframes vline {
+to { transform: translate(0, 100vh)}
+}
+/* turn off animation */
+.tv {
+  height: 100vh;
+  position: relative;
+}
+.tv.collapse {
+  animation: size 2s ease-out;
+  animation-fill-mode: forwards;
+}
+.tv.collapse:before {
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: white;
+  z-index: 1;
+  opacity: 0;
+  animation: opacity 2s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes opacity {
+  to { opacity:1; }
+}
+@keyframes size {
+  50% {
+      transform: scaleX(calc(1 / var(--width)));
+      opacity: 1;
+  }
+  98% {
+      transform: scaleX(calc(1 / var(--width))) scaleY(calc(1 / var(--height)));
+      opacity: 1;
+  }
+  100% {
+      transform: scaleX(calc(1 / var(--width))) scaleY(calc(1 / var(--height)));
+      opacity: 0;
+  }  
+}
+.home-body{
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+  font-size: 96px;
+  padding-bottom: 22px;
+  text-shadow: 0 0 4px #000;
+}
+.iframe {
+  cursor: url(normal-select.cur), default;
+}
+.term-block{
+  padding-top: 30%;
+
+}
+
+.videoWrapper {
+  position: relative;
+  align-items: center;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  cursor: url(normal-select.cur), default;
+}
+.videoWrapper iframe {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  width: 40%;
+  height: 40%;
+  cursor: url(normal-select.cur), default;
+}
+
+a:link {
+  color: rgba(195, 179, 215, 0.811);
+  background-color: transparent;
+  text-decoration: none;
+  cursor: url(link-select.cur), default;
+}
+
+
+a:hover {
+  color: transparent;
+  text-decoration:dashed;
+  background-color: transparent;
+  text-shadow: 0 0 4px #000;
+  cursor: url(link-select.cur), default;
+}
+
+a.active {
+  color: rgba(195, 179, 215, 0.811);
+  background-color: transparent;
+  text-shadow: 0 0 1.2px white;
+  cursor: url(link-select.cur), default;
+}
+a.active:hover{
+  color: transparent;
+  text-shadow: 0 0 1.5px rgba(195, 179, 215, 0.811);
+  cursor: url(link-select.cur), default;
+}
+a.inactive {
+  color: rgba(195, 179, 215, 0.811);
+  background-color: transparent;
+  cursor: url(link-select.cur), default;
+}
+a.inactive:hover{
+  color:  rgba(195, 179, 215, 0.811);
+  text-shadow: 0 0 2px rgba(195, 179, 215, 0.811);
+  cursor: url(link-select.cur), default;
+}
+a.logo-header{
+  font-size: 96px;
+  color:rgb(171, 68, 230);
+ 
+  text-shadow: 0 0 8px #000;
+}
+a.logo-header:hover{
+  color: transparent;
+  text-decoration:dashed;
+  background-color: transparent;
+  text-shadow: 0 0 4px #000;
+  cursor: url(link-select.cur), default;
+}
+
+
+.navbar a {
+  float: center;
+        text-align: center;
+        color: rgba(195, 179, 215, 0.811);
+        font-size: .85em;
+        padding-left: 20px;
+        padding-right: 20px;
+        cursor: url(link-select.cur), default;
+}
+
+.blog-container {
+  font-family: "iris";
+  font-size: .85em;
+}
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: .85em;
+  color: #2E3D48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: rgba(195, 179, 215, 0.811);;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: rgba(195, 179, 215, 0.811);
+  }
+}
+
+@-webkit-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: rgba(195, 179, 215, 0.811);
+  }
+}
+
+@-ms-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: rgba(195, 179, 215, 0.811);
+  }
+}
+
+@-o-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: rgba(195, 179, 215, 0.811);
+  }
+}
+
+
+
