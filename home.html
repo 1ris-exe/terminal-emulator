@@ -28,8 +28,8 @@
     <div class="delay3"> <br></div>
     <p class = "delay4">
    <a id = 'launch' onclick="onButtonClick()">  launch </a> &emsp;
-   <a href="execute/iRis/listen.html"target="popup"onclick="window.open('execute/iRis/listen.html','popup','width=600,height=600'); return false;">  listen  </a> &emsp;
- <a href="execute/collaborate.html">  collab  </a> &emsp;
+   <a href="/execute/iRis/listen.html"target="popup"onclick="window.open('/execute/iRis/listen.html','popup','width=600,height=600'); return false;">  listen  </a> &emsp;
+ <a href="/execute/collaborate.html">  collab  </a> &emsp;
 </p>
   </div>
 
@@ -84,7 +84,7 @@ function setCookie(cname,cvalue,exdays) {
                           user = $('#t1').val();
                           setCookie("username", user, 30);
                           //console.log("username: " + user);
-                         window.location.replace('iris.html');
+                         window.location.replace('/iris.html');
                           //listCookies();
                           $(this).dialog('close');
                           
@@ -95,7 +95,7 @@ function setCookie(cname,cvalue,exdays) {
                           $(this).dialog('close');
                           console.log("username: " + user);
                           //listCookies();
-                         window.location.replace('iris.html');
+                         window.location.replace('/iris.html');
                         }
                     }
                 });
@@ -112,7 +112,7 @@ function setCookie(cname,cvalue,exdays) {
       let user = getCookie("username");
         if (user != "") {
           listCookies();
-            window.location.replace('iris.html');
+            window.location.replace('/iris.html');
         } else {
             openDialogBox();
             }
