@@ -10,7 +10,7 @@ $("body").terminal(async function (command, terminal)
             body: JSON.stringify({ command }),
           };
 
-        const userResponse = await fetch(`https://iris-exe.herokuapp.com/ask`, requestOptions)
+        const userResponse = await fetch(`https://localhost:3000/ask`, requestOptions)
         if (!userResponse.ok) {
             throw new Error("ERROR: Response not recorded");
           }
