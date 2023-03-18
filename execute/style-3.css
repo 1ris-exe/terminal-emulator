@@ -61,6 +61,18 @@ a:hover{
   color: rgba(211, 187, 25, 0.881);
   text-decoration:none;
 }
+a.active{
+  font-family: "iris";
+  color:rgba(211, 187, 25, 0.881);
+  text-shadow: 0 -2px black;
+  text-decoration: none;
+}
+a#launch.active{
+  font-family: "iris";
+  color:rgba(211, 187, 25, 0.881);
+  text-shadow: 0 -2px black;
+  text-decoration: none;
+}
 
 h1{
   text-align: center;

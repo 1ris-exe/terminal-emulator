@@ -14,7 +14,7 @@ $("#terminal").terminal(async function (command, terminal)
             body: JSON.stringify({ command }),
           };
 
-        const userResponse = await fetch(`http://localhost:3000/ask`, requestOptions)
+        const userResponse = await fetch(`https://iris-exe.herokuapp.com/ask`, requestOptions)
         if (!userResponse.ok) {
             throw new Error("ERROR: Response not recorded");
           }
@@ -145,7 +145,7 @@ function killLoop(){
                     term.echo(small2);
                     term.echo(homeHTML);
                     document.getElementById("homeButton2").onclick = function(){
-                        window.location.href ="/execute/iRis/home.html";
+                        window.location.href ="/home.html";
                     }
 
             } else if(clickCount===3) {
