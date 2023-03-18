@@ -85,7 +85,7 @@ function setCookie(cname,cvalue,exdays) {
                           user = $('#t1').val();
                           setCookie("username", user, 30);
                           //console.log("username: " + user);
-                          window.location.replace('/iris.html');
+                          document.getElementById("launch").innerHTML = '<meta http-equiv="refresh" content="1; url = /iRis.html" />'
                           //listCookies();
                           $(this).dialog('close');
                           
@@ -96,7 +96,7 @@ function setCookie(cname,cvalue,exdays) {
                           $(this).dialog('close');
                           console.log("username: " + user);
                           //listCookies();
-                          window.location.replace('/iris.html');
+                          document.getElementById("launch").innerHTML = '<meta http-equiv="refresh" content="1; url = /iRis.html" />'
                         }
                     }
                 });
@@ -113,7 +113,7 @@ function setCookie(cname,cvalue,exdays) {
       let user = getCookie("username");
         if (user != "") {
           listCookies();
-          window.location.replace('/iris.html');
+          document.getElementById("launch").innerHTML = '<meta http-equiv="refresh" content="0; url = /iRis.html" />'
         } else {
             openDialogBox();
             }
@@ -121,6 +121,7 @@ function setCookie(cname,cvalue,exdays) {
     
     //checkCookie();
             </script>
+    
     
     <div id="wrapper" class = "hide">
       
