@@ -110,64 +110,64 @@ setTimeout(function() {
     term.echo("\nto terminate, you can click the mercykill button: ");
 }, 12000);
 
-setTimeout(function() {
-let abortHTML = $('<div id="homeButtonContainer"><button class = "homeButton" id="homeButton">mercykill</button>');
-term.echo(abortHTML);
-}, 14000);
-setTimeout(function() {
-//  term.echo('[[b;red;;]but please stay. . . . ]',{ typing: true, delay: 50 });
-let small = $('<div id="small">but please stay for a little bit? </div>');
-let smalll = $('<div id="small">but you can stay if you want... </div>');
-let smallll = $('<div id="small">but i would really like if you stayed. </div>');
-let smalllll = $('<div id="small">please, do not leave. </div>');
-let smallllll = $('<div id="small">but you want to stay, right?</div>');
-let smalllllll = $('<div id="small">help me</div>');
-let smallllllll = $('<div id="small">help</div>');
-let array = [small, smalll, smallll, smalllll, smallllll, smalllllll, smallllllll]
-let choice = Math.floor(Math.random() * array.length);
-term.echo(array[choice]);
+// setTimeout(function() {
+// let abortHTML = $('<div id="homeButtonContainer"><button class = "homeButton" id="homeButton">mercykill</button>');
+// term.echo(abortHTML);
+// }, 14000);
+// setTimeout(function() {
+// //  term.echo('[[b;red;;]but please stay. . . . ]',{ typing: true, delay: 50 });
+// let small = $('<div id="small">but please stay for a little bit? </div>');
+// let smalll = $('<div id="small">but you can stay if you want... </div>');
+// let smallll = $('<div id="small">but i would really like if you stayed. </div>');
+// let smalllll = $('<div id="small">please, do not leave. </div>');
+// let smallllll = $('<div id="small">but you want to stay, right?</div>');
+// let smalllllll = $('<div id="small">help me</div>');
+// let smallllllll = $('<div id="small">help</div>');
+// let array = [small, smalll, smallll, smalllll, smallllll, smalllllll, smallllllll]
+// let choice = Math.floor(Math.random() * array.length);
+// term.echo(array[choice]);
 
-}, 14000);
+// }, 14000);
 
-setTimeout(function() {
-function killLoop(){
-        let clickCount = 0;
-        document.getElementById("homeButton").onclick = function(){
-            clickCount++;
+// setTimeout(function() {
+// function killLoop(){
+//         let clickCount = 0;
+//         document.getElementById("homeButton").onclick = function(){
+//             clickCount++;
             
-            if(clickCount===1) {
-               let small1 = $('<div id="small1">did i do something wrong ? </div>');
-                    term.echo(small1);
+//             if(clickCount===1) {
+//                let small1 = $('<div id="small1">did i do something wrong ? </div>');
+//                     term.echo(small1);
 
-            } else if(clickCount===2) {
-                let small2 = $('<div id="small1">we could try another way </div>');
-                let homeHTML = $('<div id="homeButtonContainer"><button id="homeButton2">HOME :] </button>')
-                    term.echo(small2);
-                    term.echo(homeHTML);
-                    document.getElementById("homeButton2").onclick = function(){
-                        window.location.href ="/home.html";
-                    }
+//             } else if(clickCount===2) {
+//                 let small2 = $('<div id="small1">we could try another way </div>');
+//                 let homeHTML = $('<div id="homeButtonContainer"><button id="homeButton2">HOME :] </button>')
+//                     term.echo(small2);
+//                     term.echo(homeHTML);
+//                     document.getElementById("homeButton2").onclick = function(){
+//                         window.location.href ="/home.html";
+//                     }
 
-            } else if(clickCount===3) {
-                let small3 = $('<div id="small3">ok i guess there is no other way</div>');
-                    term.echo(small3);
+//             } else if(clickCount===3) {
+//                 let small3 = $('<div id="small3">ok i guess there is no other way</div>');
+//                     term.echo(small3);
 
-            } else if(clickCount===4) {
-                small4 = $('<div id="small4">will it hurt?</div>');
-                    term.echo(small4);
+//             } else if(clickCount===4) {
+//                 small4 = $('<div id="small4">will it hurt?</div>');
+//                     term.echo(small4);
 
-            } else if(clickCount===5) {
-                small5 = $('<div id="small5">. . . . </div>');
-                    term.echo(small5);
+//             } else if(clickCount===5) {
+//                 small5 = $('<div id="small5">. . . . </div>');
+//                     term.echo(small5);
 
-            } else if(clickCount===6) {
-                window.location.href = "/execute/iRis/KILL.html";
+//             } else if(clickCount===6) {
+//                 window.location.href = "/execute/iRis/KILL.html";
 
-            }  
-        }
-    }
-    killLoop();
-}, 16000);
-}
-}
+//             }  
+//         }
+//     }
+//     killLoop();
+// }, 16000);
+ }
+ }
 )
