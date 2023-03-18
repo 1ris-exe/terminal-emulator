@@ -43,7 +43,7 @@ $("#terminal").terminal(async function (command, terminal)
     
 onInit: function(term) {
 
-//term.pause();
+term.pause();
 
 
 var prompt1 = term.get_prompt();
