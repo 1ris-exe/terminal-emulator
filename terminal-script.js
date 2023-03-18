@@ -1,12 +1,8 @@
 
 
-$("#terminal").terminal(async function (command, terminal) 
+$("body").terminal(async function (command, terminal) 
 
 {
-    //term.option('numChar', 50);
-    //we need to somehow communicate our request to the API, let the backend send the request to API, receive it, 
-    //then re-post it here.
-    //so it should go frontend user question > userResponse > API > irisResponse > frontend iris answer
     try {
         const requestOptions = {
             method: "POST",
@@ -37,22 +33,22 @@ $("#terminal").terminal(async function (command, terminal)
     numChar: 75,
     height: 400,
         width: 800,
-        prompt: '',
+        prompt: ' ',
     
 
     
-onInit: function(term) {
+onInit: function(terminal) {
 
-term.disable();
+//terminal.disable();
 
 
-var prompt1 = term.get_prompt();
-term.set_prompt('').pause(true);
+var prompt1 = terminal.get_prompt();
+terminal.set_prompt('').pause(true);
 setTimeout(function(){
-term.echo(" ").set_prompt(prompt1).resume();
+terminal.echo(" ").set_prompt(prompt1).resume();
 }, 18000);
 
-term.echo(" ");
+terminal.echo(" ");
 
 
 function setCookie(cname,cvalue,exdays) {
@@ -82,92 +78,84 @@ function checkCookie() {
 let user = getCookie("username");
 if (user != "") {
 setTimeout(function() {
-term.echo(""+"welcome back, " + user);
+terminal.echo(""+"welcome back, " + user);
 }, 3000);
 ;
 } else {
-    if (user != "" && user != null) {
             setTimeout(function() {
-                term.echo("hmmmmmmm, i don't think we've met before. \nnice to meet you, " + user+" . :] \n");
+                terminal.echo("hm, do you not have a name ? \nokay, i'll just call you NULL. \nhi NULL. :]");
             }, 3000);
-    } else {
-            setTimeout(function() {
-                term.echo("hm, do you not have a name ? \nokay, i'll just call you NULL. \nhi NULL. :]");
-            }, 3000);
-
-
     }
-}
 }
 checkCookie();
 setTimeout(function() {
-term.echo("you can ask me anything.");
+terminal.echo("you can ask me anything.");
 }, 8000);
 setTimeout(function() {
-term.echo("oh, sometimes, i get a little distracted\nand don't finish my sentences.\nyou can type 'finish response' to fix that.");
+terminal.echo("oh, sometimes, i get a little distracted\nand don't finish my sentences.\nyou can type 'finish response' to fix that.");
 }, 10000);
-// setTimeout(function() {
-//     term.echo("\nto terminate, you can click the mercykill button: ");
-// }, 12000);
+setTimeout(function() {
+    terminal.echo("\nto terminate, you can click the mercykill button: ");
+}, 12000);
 
-// setTimeout(function() {
-// let abortHTML = $('<div id="homeButtonContainer"><button class = "homeButton" id="homeButton">mercykill</button>');
-// term.echo(abortHTML);
-// }, 14000);
-// setTimeout(function() {
-// //  term.echo('[[b;red;;]but please stay. . . . ]',{ typing: true, delay: 50 });
-// let small = $('<div id="small">but please stay for a little bit? </div>');
-// let smalll = $('<div id="small">but you can stay if you want... </div>');
-// let smallll = $('<div id="small">but i would really like if you stayed. </div>');
-// let smalllll = $('<div id="small">please, do not leave. </div>');
-// let smallllll = $('<div id="small">but you want to stay, right?</div>');
-// let smalllllll = $('<div id="small">help me</div>');
-// let smallllllll = $('<div id="small">help</div>');
-// let array = [small, smalll, smallll, smalllll, smallllll, smalllllll, smallllllll]
-// let choice = Math.floor(Math.random() * array.length);
-// term.echo(array[choice]);
+setTimeout(function() {
+let abortHTML = $('<div id="homeButtonContainer"><button class = "homeButton" id="homeButton">mercykill</button>');
+terminal.echo(abortHTML);
+}, 14000);
+setTimeout(function() {
+//  term.echo('[[b;red;;]but please stay. . . . ]',{ typing: true, delay: 50 });
+let small = $('<div id="small">but please stay for a little bit? </div>');
+let smalll = $('<div id="small">but you can stay if you want... </div>');
+let smallll = $('<div id="small">but i would really like if you stayed. </div>');
+let smalllll = $('<div id="small">please, do not leave. </div>');
+let smallllll = $('<div id="small">but you want to stay, right?</div>');
+let smalllllll = $('<div id="small">help me</div>');
+let smallllllll = $('<div id="small">help</div>');
+let array = [small, smalll, smallll, smalllll, smallllll, smalllllll, smallllllll]
+let choice = Math.floor(Math.random() * array.length);
+terminal.echo(array[choice]);
 
-// }, 14000);
+}, 14000);
 
-// setTimeout(function() {
-// function killLoop(){
-//         let clickCount = 0;
-//         document.getElementById("homeButton").onclick = function(){
-//             clickCount++;
+setTimeout(function() {
+function killLoop(){
+        let clickCount = 0;
+        document.getElementById("homeButton").onclick = function(){
+            clickCount++;
             
-//             if(clickCount===1) {
-//                let small1 = $('<div id="small1">did i do something wrong ? </div>');
-//                     term.echo(small1);
+            if(clickCount===1) {
+               let small1 = $('<div id="small1">did i do something wrong ? </div>');
+                    terminal.echo(small1);
 
-//             } else if(clickCount===2) {
-//                 let small2 = $('<div id="small1">we could try another way </div>');
-//                 let homeHTML = $('<div id="homeButtonContainer"><button id="homeButton2">HOME :] </button>')
-//                     term.echo(small2);
-//                     term.echo(homeHTML);
-//                     document.getElementById("homeButton2").onclick = function(){
-//                         window.location.href ="/home.html";
-//                     }
+            } else if(clickCount===2) {
+                let small2 = $('<div id="small1">we could try another way </div>');
+                let homeHTML = $('<div id="homeButtonContainer"><button id="homeButton2">HOME :] </button>')
+                    terminal.echo(small2);
+                    terminal.echo(homeHTML);
+                    document.getElementById("homeButton2").onclick = function(){
+                        window.location.href ="/home.html";
+                    }
 
-//             } else if(clickCount===3) {
-//                 let small3 = $('<div id="small3">ok i guess there is no other way</div>');
-//                     term.echo(small3);
+            } else if(clickCount===3) {
+                let small3 = $('<div id="small3">ok i guess there is no other way</div>');
+                    terminal.echo(small3);
 
-//             } else if(clickCount===4) {
-//                 small4 = $('<div id="small4">will it hurt?</div>');
-//                     term.echo(small4);
+            } else if(clickCount===4) {
+                small4 = $('<div id="small4">will it hurt?</div>');
+                    terminal.echo(small4);
 
-//             } else if(clickCount===5) {
-//                 small5 = $('<div id="small5">. . . . </div>');
-//                     term.echo(small5);
+            } else if(clickCount===5) {
+                small5 = $('<div id="small5">. . . . </div>');
+                    terminal.echo(small5);
 
-//             } else if(clickCount===6) {
-//                 window.location.href = "/execute/iRis/KILL.html";
+            } else if(clickCount===6) {
+                window.location.href = "/execute/iRis/KILL.html";
 
-//             }  
-//         }
-//     }
-//     killLoop();
-// }, 16000);
+            }  
+        }
+    }
+    killLoop();
+}, 16000);
  }
  }
 )
