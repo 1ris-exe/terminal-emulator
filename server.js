@@ -1,15 +1,21 @@
 import express from 'express';
 import { Configuration, OpenAIApi } from "openai";
 import dotenv from "dotenv";
+import * as fs from 'node:fs';
+import * as http from 'http';
+
 //docker run -p 3000:3000 terminal << THIS IS THE COMMAND IN CLI
 //docker compose up
 //TODO: create app.get(/) for index.html, and all other static sites. might take forever but whatever
 
 const app = express();
 const env = dotenv.config({path: './process.env'});
+
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('./'));
+
+
 
 const portPath = process.env.PORT;
 const openApiKey = process.env.OPENAI_API_KEY;
@@ -93,6 +99,42 @@ const openai = new OpenAIApi(configuration);
 // })
 
 //TODO: request from frontend to obtain iris response
+function readAndServe(path, res)   
+{
+    fs.readFile(path,function(err, data)
+    {
+        console.log(data);
+  
+        // res.setHeader('Content-Type', 'text/html');
+        res.end(data);
+    })
+}
+const server = http.createServer((req, res) => {  
+  const url = req.url;
+  const method = req.method;
+  
+  /* Serving static files on specific Routes */
+  if(url === "/iRis") 
+  {
+      readAndServe("localhost:3000/iRis.html",res) 
+    }
+    else if(url === "/home")
+    {
+        readAndServe("./home.html",res) 
+
+    }
+    else if(url === "/listen")
+    {
+        readAndServe("./execute/iRis/listen.html",res) 
+    }
+    else
+    {
+        res.end("Path not found"); 
+        /* All paths other than / and /about will send an error as 
+        a response */
+    }
+  });
+
 
 
 app.listen(portPath, () => {
