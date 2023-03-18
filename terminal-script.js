@@ -1,5 +1,5 @@
 
-
+$(function() {
 $("body").terminal(async function (command, terminal) 
 
 {
@@ -159,3 +159,4 @@ function killLoop(){
  }
  }
 )
+});

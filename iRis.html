@@ -44,32 +44,36 @@
     <body>
         <script>
         $(function() {
-        $("body").terminal(async function (command, terminal) 
+        $("body").terminal({
+// {
+//     try {
+//         const requestOptions = {
+//             method: "POST",
+//             headers: { "Content-Type": "application/json" },
+//             body: JSON.stringify({ command }),
+//           };
 
-{
-    try {
-        const requestOptions = {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ command }),
-          };
+//         const userResponse = await fetch(`https://localhost:3000/ask`, requestOptions)
+//         if (!userResponse.ok) {
+//             throw new Error("ERROR: Response not recorded");
+//           }
 
-        const userResponse = await fetch(`https://localhost:3000/ask`, requestOptions)
-        if (!userResponse.ok) {
-            throw new Error("ERROR: Response not recorded");
-          }
+//         let irisAnswer = await userResponse.json();
+//         console.log(irisAnswer.message);
+//         terminal.echo(irisAnswer.message);
+//         console.log("Completed!");
+//     } catch (err) {
+//         console.error(err, "err");
+//         let errmsg = $('<div id = "terminal-error-mn"> [[ERROR: system_failure]]</div>')
+//         terminal.echo(errmsg);
+//       }
 
-        let irisAnswer = await userResponse.json();
-        console.log(irisAnswer.message);
-        terminal.echo(irisAnswer.message);
-        console.log("Completed!");
-    } catch (err) {
-        console.error(err, "err");
-        let errmsg = $('<div id = "terminal-error-mn"> [[ERROR: system_failure]]</div>')
-        terminal.echo(errmsg);
-      }
-
-},
+// },
+hello: function(what) {
+            this.echo('Hello, ' + what +
+                      '. Wellcome to this terminal.');
+        }
+    },
 
 {
     greetings: false,
