@@ -43,7 +43,7 @@ $("#terminal").terminal(async function (command, terminal)
     
 onInit: function(term) {
 
-term.pause();
+term.disable();
 
 
 var prompt1 = term.get_prompt();
@@ -52,7 +52,7 @@ setTimeout(function(){
 term.echo(" ").set_prompt(prompt1).resume();
 }, 18000);
 
-term.echo(" ",{typing: true, delay: 50});
+term.echo(" ");
 
 
 function setCookie(cname,cvalue,exdays) {
@@ -82,7 +82,7 @@ function checkCookie() {
 let user = getCookie("username");
 if (user != "") {
 setTimeout(function() {
-term.echo(""+"welcome back, " + user,{ typing: true, delay: 50 });
+term.echo(""+"welcome back, " + user);
 }, 3000);
 ;
 } else {
@@ -106,9 +106,9 @@ term.echo("you can ask me anything.");
 setTimeout(function() {
 term.echo("oh, sometimes, i get a little distracted\nand don't finish my sentences.\nyou can type 'finish response' to fix that.");
 }, 10000);
-setTimeout(function() {
-    term.echo("\nto terminate, you can click the mercykill button: ");
-}, 12000);
+// setTimeout(function() {
+//     term.echo("\nto terminate, you can click the mercykill button: ");
+// }, 12000);
 
 // setTimeout(function() {
 // let abortHTML = $('<div id="homeButtonContainer"><button class = "homeButton" id="homeButton">mercykill</button>');
