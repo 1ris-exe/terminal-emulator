@@ -4,18 +4,44 @@ import dotenv from "dotenv";
 import * as fs from 'node:fs';
 import * as http from 'http';
 
-//docker run -p 3000:3000 terminal << THIS IS THE COMMAND IN CLI
-//docker compose up
-//TODO: create app.get(/) for index.html, and all other static sites. might take forever but whatever
-
 const app = express();
 const env = dotenv.config({path: './process.env'});
 
+
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+
+function authentication(req, res, next) {
+  var authheader = req.headers.authorization;
+  console.log(req.headers);
+
+  if (!authheader) {
+      var err = new Error('You are not authenticated!');
+      res.setHeader('WWW-Authenticate', 'Basic');
+      err.status = 401;
+      return next(err)
+  }
+
+  var auth = new Buffer.from(authheader.split(' ')[1],
+  'base64').toString().split(':');
+  var user = auth[0];
+  var pass = auth[1];
+
+  if (user == 'testgroup243c' && pass == 'm3rcyki11er') {
+
+      // If Authorized user
+      next();
+  } else {
+      var err = new Error('You are not authenticated!');
+      res.setHeader('WWW-Authenticate', 'Basic');
+      err.status = 401;
+      return next(err);
+  }
+
+}
+
+app.use(authentication)
 app.use(express.static('./'));
-
-
 
 const portPath = process.env.PORT;
 const openApiKey = process.env.OPENAI_API_KEY;
@@ -24,6 +50,7 @@ const configuration = new Configuration({
   apiKey: openApiKey,
 });
 const openai = new OpenAIApi(configuration);
+
 
 
 
@@ -134,8 +161,6 @@ const server = http.createServer((req, res) => {
         a response */
     }
   });
-
-
 
 app.listen(portPath, () => {
   console.log(portPath);
